@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = [
+    "joystick"
+]
+
+[profile.dev]
+opt-level = 0
+debug = 1
+incremental = true
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+debug = 1
+incremental = true
+lto = "thin"
