@@ -1,8 +1,6 @@
 [workspace]
 resolver = "2"
-members = [
-    "joystick"
-]
+members = ["joystick", "joystick_module"]
 
 [profile.dev]
 opt-level = 0

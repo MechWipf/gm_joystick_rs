@@ -1,9 +1,20 @@
-use std::thread;
+use std::{ mem::forget, thread};
 
 use glob::glob;
 use gm_joystick_rs::{probe_device, read_events};
 
-fn main() {
+#[cxx::bridge]
+mod ffi {
+extern "Rust" {
+        type Evd;
+        fn start() -> Box<Evd>;
+    }
+}
+
+struct Evd {
+}
+
+fn start() -> Box<Evd> {
     let mut threads = vec![];
 
     let devices = glob("/dev/input/by-id/*-event-joystick").expect("Failed to read glob pattern");
@@ -24,7 +35,7 @@ fn main() {
         }
     }
 
-    for t in threads {
-        t.join().unwrap()
-    }
+    forget(threads);
+
+    Box::new(Evd {})
 }

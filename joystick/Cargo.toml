@@ -3,6 +3,9 @@ name = "gm_joystick_rs"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+crate-type = ["rlib", "staticlib"]
+
 [dependencies]
 evdev-rs = "0.6.1"
 glob = "0.3.2"
