@@ -1,2 +1,2 @@
 CompileFlags:
-    Add: [-I./joystick_module/include, -shared]
+    Add: [-I./joystick_module/include, -shared, -I./target/cxxbridge]
