@@ -10,10 +10,13 @@ using namespace rust::cxxbridge1;
 const char* binaryversion = "1.2";
 static struct Evd *evd;
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 int refresh(lua_State* state)
 {
     return 0;
 }
+#pragma GCC diagnostic pop
 
 int axis(lua_State* state)
 {
@@ -134,9 +137,12 @@ GMOD_MODULE_OPEN()
     return 0;
 }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 GMOD_MODULE_CLOSE()
 {
     stop(evd);
 
     return 0;
 }
+#pragma GCC diagnostic pop
