@@ -1,5 +1,4 @@
 set dotenv-load
-set dotenv-required
 
 podman := "podman run --rm -v .:/workspace -w /workspace steam-sniper-rust:latest bash -l -c"
 
