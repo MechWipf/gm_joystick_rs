@@ -15,20 +15,20 @@ Inspired by:
 
 Requirements: Rust, Just, Podman (docker needs editing the justfile)
 
-- Run to create the build image:
+- Run to create the build image:  
     `just build-dev-image`
-- Run to build the module:
+- Run to build the module:  
     `just build`
 - Copy `target/release/libjoystick_module.so` to `(your gmod folder)/garrysmod/lua/bin/gmcl_joystick_linux64.dll`
 
 ### With container
 
 - Install docker (or podman)
-- Run to build a steam sniper SDK with Rust installed:
+- Run to build a steam sniper SDK with Rust installed:  
     `docker build -f dev.containerfile -t steam-sniper-rust:latest .`
-- Run container:
+- Run container:  
     `docker run --rm -v .:/workspace -w /workspace steam-sniper-rust:latest bash -l`
-- Execute the build script in the container
+- Execute the build script in the container  
     ```sh
     cargo build --release
     pushd target/release
